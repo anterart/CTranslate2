@@ -39,7 +39,7 @@ namespace ctranslate2 {
   std::vector<Example>
   BatchReader::get_next(const size_t max_batch_size,
                         const BatchType batch_type,
-                        const bool batch_increment_is_fixed) {
+                        const bool batch_size_increment_is_fixed) {
     if (max_batch_size == 0)
       throw std::invalid_argument("BatchReader: max_batch_size must be > 0");
 
@@ -57,7 +57,7 @@ namespace ctranslate2 {
     size_t batch_size = 0;
 
     std::optional<size_t> fixed_increment;
-    if (batch_increment_is_fixed)
+    if (batch_size_increment_is_fixed)
       fixed_increment = get_batch_size_increment(_next, batch_type);
 
     while (!_next.empty()) {
