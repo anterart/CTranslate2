@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <numeric>
+#include <optional>
 
 #include "ctranslate2/utils.h"
 
